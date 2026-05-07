@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name":  "App-Naruto",
+    "slug": "app-naruto",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0D0D0D"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F97316"
+      },
+      "package": "com.seunome.narutomvp"
+    },
+    "plugins": []
+  }
+}
