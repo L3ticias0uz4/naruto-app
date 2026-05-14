@@ -24,9 +24,9 @@ export function useCharacters() {
       setLoading(true);
       setError(null);
       const data = await fetchCharacters(1, PAGE_SIZE);
-      setCharacters(data.characters || []);
+      setCharacters(data.data || []);
       setPage(1);
-      setHasMore((data.characters || []).length === PAGE_SIZE);
+      setHasMore((data.data || []).length === PAGE_SIZE);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -41,7 +41,7 @@ export function useCharacters() {
       setLoadingMore(true);
       const nextPage = page + 1;
       const data = await fetchCharacters(nextPage, PAGE_SIZE);
-      const newItems = data.characters || [];
+      const newItems = data.data || [];
       setCharacters((prev) => [...prev, ...newItems]);
       setPage(nextPage);
       setHasMore(newItems.length === PAGE_SIZE);
@@ -65,7 +65,7 @@ export function useCharacters() {
       setLoading(true);
       setError(null);
       const data = await searchCharacterByName(query.trim());
-      setCharacters(data.characters || []);
+      setCharacters(data.data || []);
       setHasMore(false);
     } catch (err) {
       setError(err.message);
